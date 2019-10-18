@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let userNameField = UITextField()
+    let passField = UITextField()
+    var label1 = UILabel()
+    let loginButton = UIButton(type: .system)
+    let logoView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,7 +26,6 @@ class ViewController: UIViewController {
     }
 
     func newLabel() {
-        var label1 = UILabel()
         label1.text = "Hello, friend"
         view.addSubview(label1)
         label1.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +36,6 @@ class ViewController: UIViewController {
     }
     
     func addLogo() {
-        var logoView = UIImageView()
         
         //adding logo to UIImageView
         logoView.image = UIImage(named: "instagram-logo.png")
@@ -53,7 +57,6 @@ class ViewController: UIViewController {
     }
     
     func addUserNameField() {
-        let userNameField = UITextField()
         
         //set properties
         userNameField.placeholder = "Username"
@@ -73,7 +76,6 @@ class ViewController: UIViewController {
     }
     
     func addPassField() {
-        let passField = UITextField()
         
         //set properties
         passField.placeholder = "Password"
@@ -81,6 +83,7 @@ class ViewController: UIViewController {
         passField.delegate = self
         passField.textAlignment = .center
         passField.translatesAutoresizingMaskIntoConstraints = false
+        passField.isSecureTextEntry = true
         
         //constraints
         let yConstraint = passField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20)
@@ -93,22 +96,40 @@ class ViewController: UIViewController {
     }
     
     func addLoginButton() {
-        let loginButton = UIButton(type: .system)
         
         loginButton.setTitle("Login", for: .normal)
-        loginButton.setTitleColor(.blue, for: .normal)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.backgroundColor = .blue
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(loginButton)
         
-        let yConstraint = loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90)
-        let leftConstraint = loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
-        let rightConstraint = loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        
+        let yConstraint = loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -340)
+        let leftConstraint = loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60)
+        let rightConstraint = loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -60)
         
         yConstraint.isActive = true
         leftConstraint.isActive = true
         rightConstraint.isActive = true
     }
 
+        @objc
+    func loginButtonPressed(){
+        print("Button Pressed")
+            
+            if let username: String = userNameField.text ,
+            let password = passField.text {
+                if(!username.isEmpty && !password.isEmpty){
+                    print(username)
+                    let usernameViewController = UsernameViewController(username: username)
+                    
+                    self.navigationController?.pushViewController(usernameViewController, animated: true)
+                } else {
+                    print("Not Entered")
+                }
+            }
+    }
 }
 
 extension ViewController: UITextFieldDelegate {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		584B06FE235A6B150017CE40 /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B06FD235A6B140017CE40 /* UsernameViewController.swift */; };
 		58CE0C292351273300A4F575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE0C282351273300A4F575 /* AppDelegate.swift */; };
 		58CE0C2B2351273300A4F575 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE0C2A2351273300A4F575 /* SceneDelegate.swift */; };
 		58CE0C2D2351273300A4F575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE0C2C2351273300A4F575 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		584B06FD235A6B140017CE40 /* UsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		58CE0C252351273300A4F575 /* LoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CE0C282351273300A4F575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58CE0C2A2351273300A4F575 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		58CE0C272351273300A4F575 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				584B06FD235A6B140017CE40 /* UsernameViewController.swift */,
 				58CE0C282351273300A4F575 /* AppDelegate.swift */,
 				58CE0C2A2351273300A4F575 /* SceneDelegate.swift */,
 				58CE0C2C2351273300A4F575 /* ViewController.swift */,
@@ -140,6 +143,7 @@
 			files = (
 				58CE0C2D2351273300A4F575 /* ViewController.swift in Sources */,
 				58CE0C292351273300A4F575 /* AppDelegate.swift in Sources */,
+				584B06FE235A6B150017CE40 /* UsernameViewController.swift in Sources */,
 				58CE0C2B2351273300A4F575 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
